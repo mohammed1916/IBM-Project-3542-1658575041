@@ -15,6 +15,11 @@ def predict():
     imageFile = request.files['imagefile']
     imgPath = "./images/sample.png"
     imageFile.save(imgPath)
+    try:
+        pred = predict_img()
+    except:
+        pred='Please upload image'
+        return render_template('index.html', pred=pred)
     pred = make_prediction.predict()
     pred = "The digitalised output is"+pred
     return render_template('index.html', pred=pred)
