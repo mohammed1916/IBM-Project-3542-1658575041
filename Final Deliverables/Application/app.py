@@ -16,10 +16,9 @@ def predict():
     imageFile = request.files['imagefile']
     imgPath = "./images/"+imageFile.filename
     imageFile.save(imgPath)
-    # arr = np.array([[data1, data2, data3, data4]])
     pred = make_prediction.predict()
     pred = "The digitalised output is"+pred
-    return render_template('index.html', prediction=pred)
+    return render_template('index.html', pred=pred)
 
 
 if __name__ == "__main__":
