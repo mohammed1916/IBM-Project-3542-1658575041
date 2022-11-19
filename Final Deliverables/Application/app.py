@@ -7,7 +7,6 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def main():
-    # return "<h1>Test</h1>"
     return render_template('index.html')
 
 
