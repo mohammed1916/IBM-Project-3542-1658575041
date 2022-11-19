@@ -4,10 +4,6 @@ from keras.models import load_model
 from numpy import argmax
 
 
-def argmax(a):
-    return list(a).index(max(a))
-
-
 def load_image(filename):
     test_img = load_img(filename, color_mode = "grayscale", target_size=(28, 28))
     img = img_to_array(test_img)
