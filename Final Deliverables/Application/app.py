@@ -13,7 +13,7 @@ def main():
 @app.route('/', methods=['POST'])
 def predict():
     imageFile = request.files['imagefile']
-    imgPath = "./images/"+imageFile.filename
+    imgPath = "./images/sample.png"
     imageFile.save(imgPath)
     pred = make_prediction.predict()
     pred = "The digitalised output is"+pred
@@ -21,4 +21,4 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
